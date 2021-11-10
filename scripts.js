@@ -40,9 +40,6 @@ let selectAllInSection = (sectionName) => {
   $(`.ensemble-filter_${sectionName}`)
     .find('input[type=checkbox]')
     .prop('checked', $(`.ensemble-filter_${sectionName} .select-all`).prop('checked'));
-
-    console.log(  $(`.ensemble-filter_${sectionName}`)
-    .find('input[type=checkbox]'));
 }
 
 let selectFilterOption = (event) => {
@@ -52,10 +49,10 @@ let selectFilterOption = (event) => {
 }
 
 let checkSiblings = (target) => {
-  let allChecked = false; 
-  
+  let allChecked = false;
+
   $(target).parent().parent().siblings().each(() => {
-    let returnVal = allChecked = 
+    //check siblings to set indeterminate value
   });
 
 }
