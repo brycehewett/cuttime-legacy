@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link href="https://defendingyourtime.com/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://defendingyourtime.com//css/cuttime-custom-styles.css?v=0.03" rel="stylesheet">
+    <link href="/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 groups">
+          <h1>Create Group</h1>
+          <p>Start by selecting which ensembles you want to include, you can add more filters in the next step.</p>
+
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h4>Who do you want to assign to this group?</h4>
+              <h5 class="text-muted">Students (and optionally parents), ensemble personnel or both?</h5>
+              <label class="radio-inline">
+                <input type="radio" name="sectionTypeOptions" value="ensemble" onclick="toggleSections()" checked>Students <span class="text-muted">(choose parents later)</span>
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="sectionTypeOptions" value="non-ensemble" onclick="toggleSections()">Non Ensemble
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="sectionTypeOptions" value="both" onclick="toggleSections()">Both :)
+              </label>
+            </div>
+          </div>
+
+          <div class="panel panel-default section-type_ensemble ensemble-filter_ensembles">
+            <div class="panel-heading">
+              <label class="checkbox-inline">
+                <input type="checkbox" class="select-all" onclick="selectAllInSection('ensembles')"> All Ensembles
+              </label>
+            </div>
+            <div class="panel-body section-selection-grid">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
+                  Parent
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Hand Bell
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Marching Band
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Pep Band
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Parent
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Hand Bell
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Marching Band
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Pep Band
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Parent
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Hand Bell
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Marching Band
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Pep Band
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default section-type_ensemble ensemble-filter_sections">
+            <div class="panel-heading">
+              <label class="checkbox-inline">
+                <input type="checkbox" class="select-all" onclick="selectAllInSection('sections')" disabled checked> All Sections <span class="text-muted">(within selected ensembles)</span>
+              </label>
+            </div>
+            <div class="panel-body section-selection-grid hidden">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Voice
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Staff/Instructors
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                 Director
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Alto
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default section-type_ensemble ensemble-filter_positions">
+            <div class="panel-heading">
+              <label class="checkbox-inline">
+                <input type="checkbox" class="select-all" onclick="selectAllInSection('positions')" disabled checked> All Positions <span class="text-muted">(within selected sections)</span>
+              </label>
+            </div>
+            <div class="panel-body section-selection-grid hidden">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Position A
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Position B
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Position C
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Position D
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Position E
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Position F
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Position G
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default section-type_ensemble ensemble-filter_grades">
+            <div class="panel-heading">
+              <label class="checkbox-inline">
+                <input type="checkbox" class="select-all" onclick="selectAllInSection('grades')" disabled checked> All Grades <span class="text-muted">(within all selections above)</span>
+              </label>
+            </div>
+            <div class="panel-body section-selection-grid hidden">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  9th
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  10th
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  11th
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  12th
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default section-type_ensemble">
+            <div class="panel-body">
+              <h4>Plus parents or only parents?</h4>
+              <label class="radio-inline">
+                <input type="radio" name="includeParentsOptions" value="students-only" checked>Students Only
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="includeParentsOptions" value="parents-and-students">Parents & Students
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="includeParentsOptions" value="parents-only">Parents Only
+              </label>
+            </div>
+          </div>
+
+          <div class="panel panel-default section-type_non-ensemble hidden">
+            <div class="panel-body">
+              <h4>Select non-ensemble personnel</h4>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Staff / Faculty
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Program Administrators
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Volunteers
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="">
+                  Donors
+                </label>
+              </div>
+
+              <h5>Send to graduates?</h5>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox1" value="option1"> 2020
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox1" value="option1"> 2019
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox1" value="option1"> 2018
+              </label>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h4>Do you want to save this group for future use?</h4>
+              <label class="radio-inline">
+                <input type="radio" name="saveAsGroupOption" value="true" onclick="toggleSaveAsGroup()" checked>Yes, save this group for later.
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="saveAsGroupOption" value="false" onclick="toggleSaveAsGroup()">No, I only need to use it once.
+              </label>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <div id="save-option_save-group" class="input-group">
+                    <input type="text" class="form-control" placeholder="Group Name">
+                    <div class="input-group-btn">
+                      <button type="button" class="btn btn-primary">Save Group</button>
+                    </div>
+                  </div>
+
+                  <a id="save-option_one-time" class="btn btn-primary" style="display: none" href="">Use One-Time</a>
+                </div>
+                <div class="col-lg-6">
+                  <span class="pull-right">200 Group Members<span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="scripts.js"></script>
+  </body>
+</html>

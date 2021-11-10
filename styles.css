@@ -1,0 +1,15 @@
+.groups .section-selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-flow: row;
+    gap: 10px;
+}
+
+.groups .section-selection-grid::after, 
+.groups .section-selection-grid::before {
+    display: none;
+}
+
+.groups .section-selection-grid .checkbox {
+    margin: 0;
+}
