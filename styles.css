@@ -5,7 +5,7 @@
     gap: 10px;
 }
 
-.groups .section-selection-grid::after, 
+.groups .section-selection-grid::after,
 .groups .section-selection-grid::before {
     display: none;
 }
