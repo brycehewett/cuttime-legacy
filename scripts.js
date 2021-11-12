@@ -36,27 +36,66 @@ let toggleSaveAsGroup = () => {
   $('#save-option_save-group, #save-option_one-time').toggle();
 }
 
-let selectAllInSection = (sectionName) => {
-  $(`.ensemble-filter_${sectionName}`)
-    .find('input[type=checkbox]')
-    .prop('checked', $(`.ensemble-filter_${sectionName} .select-all`).prop('checked'));
+let selectAllInSection = (event) => {
+  let sectionId = $(event.target).closest('.panel').attr('id');
+  let isChecked = $(`#${sectionId} .select-all`).prop('checked');
+
+  $(`#${sectionId} input[type=checkbox]`).prop('checked', isChecked);
+
+  if(sectionId === 'ensemble-filter_ensembles') {
+    toggleNonEnsembleSections(isChecked);
+  } else if (isChecked) {
+    $(`#${sectionId} .panel-body`).addClass('hidden');
+  } else {
+    $(`#${sectionId} .panel-body`).removeClass('hidden');
+  }
 }
 
 let selectFilterOption = (event) => {
-  console.log($(event.target).parent().parent().siblings())
-  let allChecked = checkSiblings(event.target);
+  let sectionId = $(event.target).closest('.panel').attr('id');
+  let anyChecked = checkSiblings(sectionId);
 
+  if(sectionId === 'ensemble-filter_ensembles' && anyChecked) {
+    toggleNonEnsembleSections(true);
+  }
 }
 
-let checkSiblings = (target) => {
-  let allChecked = false;
+let toggleNonEnsembleSections = (enableSection) => {
+  let nonEnsembleSections = $('#ensemble-filter_sections, #ensemble-filter_positions, #ensemble-filter_grades');
 
-  $(target).parent().parent().siblings().each(() => {
-    //check siblings to set indeterminate value
-  });
+  nonEnsembleSections
+    .find('.select-all')
+    .prop('disabled', !enableSection)
+    .prop('checked', true)
+    .prop('indeterminate', false);
 
+  nonEnsembleSections
+    .find('.panel-body')
+    .addClass('hidden');
 }
 
-$(document).ready(() => {
+let checkSiblings = (sectionId) => {
+  let all = $(`#${sectionId} .section-selection-grid input[type=checkbox]`).length
+  let checked = $(`#${sectionId} .section-selection-grid input[type=checkbox]:checked`).length;
 
-});
+  if (checked == 0) {
+    $(`#${sectionId} .select-all`)
+      .prop('checked', false)
+      .prop('indeterminate', false);
+    return false;
+  }
+
+  if (checked >= 1 && checked < all) {
+    $(`#${sectionId} .select-all`)
+      .prop('checked', true)
+      .prop('indeterminate', true);
+    return true;
+  }
+
+  if (checked == all) {
+    $(`#${sectionId} .select-all`)
+      .prop('checked', true)
+      .prop('indeterminate', false);
+    return true;
+  }
+}

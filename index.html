@@ -14,12 +14,14 @@
       <div class="row">
         <div class="col-md-8 col-md-offset-2 groups">
           <h1>Create Group</h1>
-          <p>Start by selecting which ensembles you want to include, you can add more filters in the next step.</p>
+          <p class="lead">Start by selecting which ensembles you want to include, you can add more filters in the next step.</p>
 
           <div class="panel panel-default">
-            <div class="panel-body">
+            <div class="panel-heading">
               <h4>Who do you want to assign to this group?</h4>
               <h5 class="text-muted">Students (and optionally parents), ensemble personnel or both?</h5>
+            </div>
+            <div class="panel-body">
               <label class="radio-inline">
                 <input type="radio" name="sectionTypeOptions" value="ensemble" onclick="toggleSections()" checked>Students <span class="text-muted">(choose parents later)</span>
               </label>
@@ -32,10 +34,10 @@
             </div>
           </div>
 
-          <div class="panel panel-default section-type_ensemble ensemble-filter_ensembles">
+          <div id="ensemble-filter_ensembles" class="panel panel-default section-type_ensemble">
             <div class="panel-heading">
               <label class="checkbox-inline">
-                <input type="checkbox" class="select-all" onclick="selectAllInSection('ensembles')"> All Ensembles
+                <input type="checkbox" class="select-all" onchange="selectAllInSection(event)"> All Ensembles
               </label>
             </div>
             <div class="panel-body section-selection-grid">
@@ -47,187 +49,187 @@
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   Hand Bell
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   Marching Band
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   Pep Band
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   Parent
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   Hand Bell
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   Marching Band
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   Pep Band
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   Parent
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   Hand Bell
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   Marching Band
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   Pep Band
                 </label>
               </div>
             </div>
           </div>
 
-          <div class="panel panel-default section-type_ensemble ensemble-filter_sections">
+          <div id="ensemble-filter_sections" class="panel panel-default section-type_ensemble">
             <div class="panel-heading">
               <label class="checkbox-inline">
-                <input type="checkbox" class="select-all" onclick="selectAllInSection('sections')" disabled checked> All Sections <span class="text-muted">(within selected ensembles)</span>
+                <input type="checkbox" class="select-all" onclick="selectAllInSection(event)" disabled checked> All Sections <span class="text-muted">(within selected ensembles)</span>
               </label>
             </div>
             <div class="panel-body section-selection-grid hidden">
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   Voice
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   Staff/Instructors
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                  Director
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   Alto
                 </label>
               </div>
             </div>
           </div>
 
-          <div class="panel panel-default section-type_ensemble ensemble-filter_positions">
+          <div id="ensemble-filter_positions" class="panel panel-default section-type_ensemble">
             <div class="panel-heading">
               <label class="checkbox-inline">
-                <input type="checkbox" class="select-all" onclick="selectAllInSection('positions')" disabled checked> All Positions <span class="text-muted">(within selected sections)</span>
+                <input type="checkbox" class="select-all" onclick="selectAllInSection(event)" disabled checked> All Positions <span class="text-muted">(within selected sections)</span>
               </label>
             </div>
             <div class="panel-body section-selection-grid hidden">
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   Position A
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   Position B
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   Position C
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   Position D
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   Position E
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   Position F
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   Position G
                 </label>
               </div>
             </div>
           </div>
 
-          <div class="panel panel-default section-type_ensemble ensemble-filter_grades">
+          <div id="ensemble-filter_grades" class="panel panel-default section-type_ensemble">
             <div class="panel-heading">
               <label class="checkbox-inline">
-                <input type="checkbox" class="select-all" onclick="selectAllInSection('grades')" disabled checked> All Grades <span class="text-muted">(within all selections above)</span>
+                <input type="checkbox" class="select-all" onclick="selectAllInSection(event)" disabled checked> All Grades <span class="text-muted">(within all selections above)</span>
               </label>
             </div>
             <div class="panel-body section-selection-grid hidden">
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   9th
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   10th
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   11th
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="">
+                  <input type="checkbox" value="" onchange="selectFilterOption(event)">
                   12th
                 </label>
               </div>
@@ -235,8 +237,10 @@
           </div>
 
           <div class="panel panel-default section-type_ensemble">
-            <div class="panel-body">
+            <div class="panel-heading">
               <h4>Plus parents or only parents?</h4>
+            </div>
+            <div class="panel-body">
               <label class="radio-inline">
                 <input type="radio" name="includeParentsOptions" value="students-only" checked>Students Only
               </label>
@@ -250,8 +254,10 @@
           </div>
 
           <div class="panel panel-default section-type_non-ensemble hidden">
-            <div class="panel-body">
+            <div class="panel-heading">
               <h4>Select non-ensemble personnel</h4>
+            </div>
+            <div class="panel-body">
               <div class="checkbox">
                 <label>
                   <input type="checkbox" value="">
@@ -291,25 +297,29 @@
           </div>
 
           <div class="panel panel-default">
-            <div class="panel-body">
+            <div class="panel-heading">
               <h4>Do you want to save this group for future use?</h4>
-              <label class="radio-inline">
-                <input type="radio" name="saveAsGroupOption" value="true" onclick="toggleSaveAsGroup()" checked>Yes, save this group for later.
-              </label>
-              <label class="radio-inline">
-                <input type="radio" name="saveAsGroupOption" value="false" onclick="toggleSaveAsGroup()">No, I only need to use it once.
-              </label>
+            </div>
+            <div class="panel-body">
+              <div class="form-group">
+                  <label class="radio-inline">
+                    <input type="radio" name="saveAsGroupOption" value="true" onclick="toggleSaveAsGroup()" checked>Yes, save this group for later.
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="saveAsGroupOption" value="false" onclick="toggleSaveAsGroup()">No, I only need to use it once.
+                  </label>
+              </div>
 
               <div class="row">
                 <div class="col-lg-6">
                   <div id="save-option_save-group" class="input-group">
-                    <input type="text" class="form-control" placeholder="Group Name">
+                    <input type="text" class="form-control input-lg" placeholder="Group Name">
                     <div class="input-group-btn">
-                      <button type="button" class="btn btn-primary">Save Group</button>
+                      <button type="button" class="btn btn-primary btn-lg">Save Group</button>
                     </div>
                   </div>
 
-                  <a id="save-option_one-time" class="btn btn-primary" style="display: none" href="">Use One-Time</a>
+                  <a id="save-option_one-time" class="btn btn-primary btn-lg" style="display: none" href="">Use One-Time</a>
                 </div>
                 <div class="col-lg-6">
                   <span class="pull-right">200 Group Members<span>
